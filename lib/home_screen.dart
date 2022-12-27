@@ -75,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
           height: 140,
           decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: isDark ? primaryDarkColor : primaryDarkColor,
+              color: isDark ? primaryDarkColor : primaryLightColor,
               boxShadow: [
                 BoxShadow(
                     offset: const Offset(-5, 5),
@@ -87,15 +87,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 BoxShadow(
                     offset: const Offset(-5, 5),
                     blurRadius: 10,
-                    color: isDark
-                        ? const Color(0xFF121625)
-                        : const Color(0XFFA5B786),
+                    color: isDark ? const Color(0x4D9DA7CF) : Colors.white,
                     inset: isPressed),
               ]),
           child: Icon(
             Icons.power_settings_new,
             size: 48,
-            color: isDark ? primaryDarkColor : primaryLightColor,
+            color: isDark ? primaryLightColor : primaryDarkColor,
           ),
         ));
   }
@@ -114,6 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 36),
             CenterText(),
             const SizedBox(height: 146),
+            PowerButton()
           ],
         ),
       ),
